@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/05/My-New-Post/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="这是我用hexo做的第一篇博客，那么本次博客就讲一下我在本次用hexo的历程吧 搭建环境1.安装Git只需上官网下载即可，实际上Git官网下载速度很慢，可以考虑在csdn上下载安装后要设置Github账号和邮箱12$ git config --global user.name &quot;xuhaiyan&quot;$ git config --global user.email &quot;haiyan.xu.vip@gma">
-<meta property="og:updated_time" content="2017-09-05T11:28:46.366Z">
+<meta property="og:updated_time" content="2017-09-05T11:31:56.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My New Post">
 <meta name="twitter:description" content="这是我用hexo做的第一篇博客，那么本次博客就讲一下我在本次用hexo的历程吧 搭建环境1.安装Git只需上官网下载即可，实际上Git官网下载速度很慢，可以考虑在csdn上下载安装后要设置Github账号和邮箱12$ git config --global user.name &quot;xuhaiyan&quot;$ git config --global user.email &quot;haiyan.xu.vip@gma">
@@ -90,13 +90,15 @@
 <h3 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2.安装node.js"></a>2.安装node.js</h3><p>下载：<a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a></p>
 <h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><h3 id="1-建立Repository"><a href="#1-建立Repository" class="headerlink" title="1.建立Repository"></a>1.建立Repository</h3><p>首先应该注册一个github账号，然后建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</p>
 <h3 id="2-配置SSH-Key"><a href="#2-配置SSH-Key" class="headerlink" title="2.配置SSH-Key"></a>2.配置SSH-Key</h3><p>首先解释一下SSH，SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。<br>而Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
-<h4 id="2-1-检测SSH-Key是否存在"><a href="#2-1-检测SSH-Key是否存在" class="headerlink" title="2.1 检测SSH-Key是否存在"></a>2.1 检测SSH-Key是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div><div class="line">``` </div><div class="line">如果有就直接将SSH-key加到Github中去</div><div class="line"></div><div class="line"><span class="comment">#### 2.2 生成新的SSH-key</span></div><div class="line">``` bash</div><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”</div></pre></td></tr></table></figure>
+<h4 id="2-1-检测SSH-Key是否存在"><a href="#2-1-检测SSH-Key是否存在" class="headerlink" title="2.1 检测SSH-Key是否存在"></a>2.1 检测SSH-Key是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div></pre></td></tr></table></figure>
+<p>如果有就直接将SSH-key加到Github中去</p>
+<h4 id="2-2-生成新的SSH-key"><a href="#2-2-生成新的SSH-key" class="headerlink" title="2.2 生成新的SSH-key"></a>2.2 生成新的SSH-key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”</div></pre></td></tr></table></figure>
 <p>（未完待续）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj77iisq20001msu79f6av5z2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj77imvq20001z4u7x07x93jf" class="article-share-link">Share</a>
       
       
     </footer>
