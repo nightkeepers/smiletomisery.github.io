@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/05/My-New-Post/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="这是我用hexo做的第一篇博客，那么本次博客就讲一下我在本次用hexo的历程吧 搭建环境1.安装Git只需上官网下载即可，实际上Git官网下载速度很慢，可以考虑在csdn上下载安装后要设置Github账号和邮箱12$ git config --global user.name &quot;xuhaiyan&quot;$ git config --global user.email &quot;haiyan.xu.vip@gma">
-<meta property="og:updated_time" content="2017-09-26T07:12:53.322Z">
+<meta property="og:updated_time" content="2017-09-26T07:38:19.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My New Post">
 <meta name="twitter:description" content="这是我用hexo做的第一篇博客，那么本次博客就讲一下我在本次用hexo的历程吧 搭建环境1.安装Git只需上官网下载即可，实际上Git官网下载速度很慢，可以考虑在csdn上下载安装后要设置Github账号和邮箱12$ git config --global user.name &quot;xuhaiyan&quot;$ git config --global user.email &quot;haiyan.xu.vip@gma">
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -97,17 +97,30 @@
 <p>分别输入<br>eval “$(ssh-agent -s)”<br>Agent pid 59566<br>ssh-add ~/.ssh/id_rsa</p>
 <p>最后将ssh key添加到GitHub中<br>打开id_rsa.pub文件，将里面的信息复制，登陆GitHub-&gt;Settings-&gt;“SSH Keys”，点“Add SSH Key“，加入ssh-key即可。</p>
 <p>可以验证一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi your user name! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>###安装<br>完成前面步骤后，可执行如下命令安装hexo：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
-<p>###初始化<br>在你喜欢的目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>完成前面步骤后，可执行如下命令安装hexo：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>在你喜欢的目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
 <p>这条命令会配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
 <p> 会在目录中安装 node_modules</p>
-<p> ###启动<br> 在目录中执行<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p> 在目录中执行<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p> 然后在同一个文件夹中新打开一个git bash命令行窗口，<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"new post name"</span></div></pre></td></tr></table></figure></p>
+<p> 然后刷新<a href="http://localhost:4000/，发现已经有了一篇新的文章" target="_blank" rel="external">http://localhost:4000/，发现已经有了一篇新的文章</a><br> 你也可以以去hexo\scaffolds\post.md更改layout</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] <span class="string">"new post name"</span></div></pre></td></tr></table></figure>
+<p> 这条命令将markdown文件生成新的静态网页</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p> 你可以去hexo\source_posts使用支持markdown的编辑器来编辑博客<br> 部署到Github前需要配置_config.yml文件，首先找到下面的内容并更改branch为master</p>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-http-hexo-io-docs-deployment-html"><a href="#Docs-http-hexo-io-docs-deployment-html" class="headerlink" title="Docs: http://hexo.io/docs/deployment.html"></a>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a></h2><p> deploy:<br>   type: github<br>   repository: git@github.com:zhchnchn/zhchnchn.github.io.git<br>   branch: master<br> (电脑需要开放SSH端口)<br> 然后输入</p>
+<pre><code class="bash">$ hexo deploy
+</code></pre>
+<p> 如果不行，则改type为git<br> 如果还是不行，输入</p>
+<pre><code class="bash">$ npm install hexo-deployer-git --save
+</code></pre>
+<p> 那么一个博客就部署好了，访问<a href="http://githubname.github.io" target="_blank" rel="external">http://githubname.github.io</a> 即可看到</p>
 <p>（未完待续）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj819l70h0000cou7nmdok7r0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj81aicgc0000p8u75is3jp66" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -118,7 +131,7 @@
   
   
     <a href="/2017/09/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -151,7 +164,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -176,7 +189,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
