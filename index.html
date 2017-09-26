@@ -90,13 +90,19 @@
 <h3 id="2-配置SSH-Key"><a href="#2-配置SSH-Key" class="headerlink" title="2.配置SSH-Key"></a>2.配置SSH-Key</h3><p>首先解释一下SSH，SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。<br>而Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
 <h4 id="2-1-检测SSH-Key是否存在"><a href="#2-1-检测SSH-Key是否存在" class="headerlink" title="2.1 检测SSH-Key是否存在"></a>2.1 检测SSH-Key是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div></pre></td></tr></table></figure>
 <p>如果有就直接将SSH-key加到Github中去</p>
-<h4 id="2-2-生成新的SSH-key"><a href="#2-2-生成新的SSH-key" class="headerlink" title="2.2 生成新的SSH-key"></a>2.2 生成新的SSH-key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”</div></pre></td></tr></table></figure>
+<h4 id="2-2-生成新的SSH-key"><a href="#2-2-生成新的SSH-key" class="headerlink" title="2.2 生成新的SSH-key"></a>2.2 生成新的SSH-key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”(ssh与keygen之间没有空格)</div></pre></td></tr></table></figure>
+<p>然后输入passphrase（本步骤可以跳过）</p>
+<p>分别输入<br>eval “$(ssh-agent -s)”<br>Agent pid 59566<br>ssh-add ~/.ssh/id_rsa</p>
+<p>最后将ssh key添加到GitHub中<br>打开id_rsa.pub文件，将里面的信息复制，登陆GitHub-&gt;Settings-&gt;“SSH Keys”，点“Add SSH Key“，加入ssh-key即可。</p>
+<p>可以验证一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi smiletomisery! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>###安装<br>完成前面步骤后，可执行如下命令安装hexo：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<p>###初始化<br>在你喜欢的目录下运行 hexo init</p>
 <p>（未完待续）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj810g2th0000qgu7w9vqtnuz" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj81986040001iou79n7xvhv1" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -141,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cj810g2tp0001qgu7zmpqrr4f" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cj81985zp0000iou7qg0ywii6" class="article-share-link">Partager</a>
       
       
     </footer>
