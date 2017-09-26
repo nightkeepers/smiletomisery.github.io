@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -91,18 +91,21 @@
 <h4 id="2-1-检测SSH-Key是否存在"><a href="#2-1-检测SSH-Key是否存在" class="headerlink" title="2.1 检测SSH-Key是否存在"></a>2.1 检测SSH-Key是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div></pre></td></tr></table></figure>
 <p>如果有就直接将SSH-key加到Github中去</p>
 <h4 id="2-2-生成新的SSH-key"><a href="#2-2-生成新的SSH-key" class="headerlink" title="2.2 生成新的SSH-key"></a>2.2 生成新的SSH-key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”(ssh与keygen之间没有空格)</div></pre></td></tr></table></figure>
-<p>然后输入passphrase（本步骤可以跳过）</p>
+<p>然后输入passphrase（本步骤可以跳过，即连按几次回车）</p>
 <p>分别输入<br>eval “$(ssh-agent -s)”<br>Agent pid 59566<br>ssh-add ~/.ssh/id_rsa</p>
 <p>最后将ssh key添加到GitHub中<br>打开id_rsa.pub文件，将里面的信息复制，登陆GitHub-&gt;Settings-&gt;“SSH Keys”，点“Add SSH Key“，加入ssh-key即可。</p>
-<p>可以验证一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi smiletomisery! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure></p>
+<p>可以验证一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi your user name! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure></p>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>###安装<br>完成前面步骤后，可执行如下命令安装hexo：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
-<p>###初始化<br>在你喜欢的目录下运行 hexo init</p>
+<p>###初始化<br>在你喜欢的目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+<p>这条命令会配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p> 会在目录中安装 node_modules</p>
+<p> ###启动<br> 在目录中执行<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
 <p>（未完待续）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj81986040001iou79n7xvhv1" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj819l70h0000cou7nmdok7r0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cj81985zp0000iou7qg0ywii6" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cj819l70w0001cou7939edftw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +185,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -207,7 +210,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
