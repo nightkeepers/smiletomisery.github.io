@@ -61,6 +61,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-testreport" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/22/testreport/" class="article-date">
+  <time datetime="2018-04-21T16:42:34.232Z" itemprop="datePublished">2018-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jumper测试报告"><a href="#jumper测试报告" class="headerlink" title="jumper测试报告"></a>jumper测试报告</h2><p>接着，我讲一下我的jumper的测试报告</p>
+<h3 id="Junit与Eclipse的混合使用"><a href="#Junit与Eclipse的混合使用" class="headerlink" title="Junit与Eclipse的混合使用"></a>Junit与Eclipse的混合使用</h3><p>这个是这个测试的准备工作，网上有很多教程，这里不再赘述，详情可见<a href="https://se-2018.github.io/resources/eclipse-tutorial-v1.pdf" target="_blank" rel="external">教程</a></p>
+<h3 id="测试要点"><a href="#测试要点" class="headerlink" title="测试要点"></a>测试要点</h3><p>本测试总共测试八项内容<br>1、Move()是否成功<br>2、前方两格有花，是否Move()<br>3、前方两格有石头，是否Turn()<br>4、前方两格遇到边界是否Turn()<br>5、前方一格遇到Rock是否跳过<br>6、前2B方两格遇到Bug是否Turn()<br>7、前方两格遇到Jumper是否Turn()<br>8、前方一格遇到Jumper是否Move()</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>先用Before初始化（将Jumper放在5,8，方向为0，设置各种障碍），再在各个单元具体实现，这里使用AssertEquals,源码见下：</p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>测试自然是全部通过了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/22/testreport/" data-id="cjg9mkymo0000pou7rb68hf6j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-designreport" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/22/designreport/" class="article-date">
+  <time datetime="2018-04-21T16:08:24.093Z" itemprop="datePublished">2018-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jumper设计报告"><a href="#jumper设计报告" class="headerlink" title="jumper设计报告"></a>jumper设计报告</h2><p>大家好，今天我讲一下我的jumper的设计报告</p>
+<h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p>首先我们要明确一下任务：</p>
+<p><em>You are asked to create a class called Jumper. This actor can move forward two cells in each move. It “jumps” over rocks and flowers. It does not leave anything behind it when it jumps.</em></p>
+<p>然后有很多问题，我们在这里说明一些重要部分：</p>
+<p>当Jumper面前第二个格子中有石头或者是Bug或Jumper的话，它会采用Turn方法，而不是move。当然，当它面前第一个格子有石头或另一个Jumper时，它会直接跳过去。然而因为Bug不喜欢穿过别人的胯下，所以当Jumper面前第一个格子的是Bug的话，Jumper会转向以免被Bug攻击。Jumper会将Flower视为空格子，所以Flower是不会影响Jumper的跳动的。除此之外，当Jumper到达边界时，Jump就会转向以免飞出去，包括前两个格子之内有边界的情况。这就是Jumper将要实现的效果。</p>
+<h3 id="类内外部结构"><a href="#类内外部结构" class="headerlink" title="类内外部结构"></a>类内外部结构</h3><p>首先，要自己写一个Jumper类是极端复杂的，所以我们将使用继承。这里将要继承的是Actor类，因为我认为Jumper本质上不能算是一个Bug类，它的判定能否移动的方法和Bug不一样，而且从主观认知上，Jumper并不能算一个Bug。然而，我们发现Jumper和Bug类是十分相似的，除了判定移动，移动的方法不一样外，其他都可以照搬。</p>
+<p>下面是这两个类的具体实现代码以及其比较。</p>
+<p>我们发现它的判定CanMove和Move的方法有所不同这里用 来判断前方两格的情况并移动。</p>
+<h3 id="遇到的情况"><a href="#遇到的情况" class="headerlink" title="遇到的情况"></a>遇到的情况</h3><p>其实问题是不大的，就是在使用Grid<actor>的过程中，它报了Syntax error, parameterized types are only available if source level is 1.5的错误，最后在StackOverFlow上找到了答案：</actor></p>
+<p>1.Go to Project properties.<br>2.Then ‘Java Compiler’ -&gt; Check the box (‘Enable project specific settings’)<br>2.Change the compiler compliance level to ‘5.0’ &amp; click ok.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/22/designreport/" data-id="cjg9l64p200017ou76lt11vy1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-My-New-Post" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/05/My-New-Post/" class="article-date">
@@ -118,74 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cje27i7hp0000bsu7zfov25nw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-designreport" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/05/designreport/" class="article-date">
-  <time datetime="2017-09-05T06:41:55.000Z" itemprop="datePublished">2017-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/05/designreport/">My New Post</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是我用hexo做的第一篇博客，那么本次博客就讲一下我在本次用hexo的历程吧</p>
-<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h3><p>只需上官网下载即可，实际上Git官网下载速度很慢，可以考虑在csdn上下载<br>安装后要设置Github账号和邮箱<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"xuhaiyan"</span></div><div class="line">$ git config --global user.email <span class="string">"haiyan.xu.vip@gmail.com"</span></div></pre></td></tr></table></figure></p>
-<h3 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2.安装node.js"></a>2.安装node.js</h3><p>下载：<a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a></p>
-<h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><h3 id="1-建立Repository"><a href="#1-建立Repository" class="headerlink" title="1.建立Repository"></a>1.建立Repository</h3><p>首先应该注册一个github账号，然后建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</p>
-<h3 id="2-配置SSH-Key"><a href="#2-配置SSH-Key" class="headerlink" title="2.配置SSH-Key"></a>2.配置SSH-Key</h3><p>首先解释一下SSH，SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。<br>而Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
-<h4 id="2-1-检测SSH-Key是否存在"><a href="#2-1-检测SSH-Key是否存在" class="headerlink" title="2.1 检测SSH-Key是否存在"></a>2.1 检测SSH-Key是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div></pre></td></tr></table></figure>
-<p>如果有就直接将SSH-key加到Github中去</p>
-<h4 id="2-2-生成新的SSH-key"><a href="#2-2-生成新的SSH-key" class="headerlink" title="2.2 生成新的SSH-key"></a>2.2 生成新的SSH-key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”(ssh与keygen之间没有空格)</div></pre></td></tr></table></figure>
-<p>然后输入passphrase（本步骤可以跳过，即连按几次回车）</p>
-<p>分别输入<br>eval “$(ssh-agent -s)”<br>Agent pid 59566<br>ssh-add ~/.ssh/id_rsa</p>
-<p>最后将ssh key添加到GitHub中<br>打开id_rsa.pub文件，将里面的信息复制，登陆GitHub-&gt;Settings-&gt;“SSH Keys”，点“Add SSH Key“，加入ssh-key即可。</p>
-<p>可以验证一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi your user name! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p>完成前面步骤后，可执行如下命令安装hexo：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
-<h3 id="2、初始化"><a href="#2、初始化" class="headerlink" title="2、初始化"></a>2、初始化</h3><p>在你喜欢的目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>这条命令会配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<p> 会在目录中安装 node_modules</p>
-<h3 id="3、启动"><a href="#3、启动" class="headerlink" title="3、启动"></a>3、启动</h3><p> 在目录中执行<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
-<h3 id="4、建立"><a href="#4、建立" class="headerlink" title="4、建立"></a>4、建立</h3><p> 然后在同一个文件夹中新打开一个git bash命令行窗口，<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"new post name"</span></div></pre></td></tr></table></figure></p>
-<p> 然后刷新<a href="http://localhost:4000/，发现已经有了一篇新的文章" target="_blank" rel="external">http://localhost:4000/，发现已经有了一篇新的文章</a><br> 你也可以以去hexo\scaffolds\post.md更改layout</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] <span class="string">"new post name"</span></div></pre></td></tr></table></figure>
-<p> 这条命令将markdown文件生成新的静态网页</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<h3 id="5、编辑"><a href="#5、编辑" class="headerlink" title="5、编辑"></a>5、编辑</h3><p> 你可以去hexo\source_posts使用支持markdown的编辑器来编辑博客<br> 部署到Github前需要配置_config.yml文件，首先找到下面的内容并更改branch为master<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: github</div><div class="line">  repository: git@github.com:zhchnchn/zhchnchn.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p> (电脑需要开放SSH端口)<br> 然后输入</p>
-<pre><code class="bash">$ hexo deploy
-</code></pre>
-<p> 如果不行，则改type为git<br> 如果还是不行，输入</p>
-<pre><code class="bash">$ npm install hexo-deployer-git --save
-</code></pre>
-<p> 那么一个博客就部署好了，访问<a href="http://githubname.github.io" target="_blank" rel="external">http://githubname.github.io</a> 即可看到</p>
-<p>（未完待续）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/designreport/" data-id="cjg9l13iv0000a0u7x1agaudy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cjg9l64ot00007ou7jl7osxlg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cje27i7i50001bsu7xc3hd50r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cjg9l64p500027ou79nigf0hg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +257,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
   </div>
 
@@ -270,11 +270,15 @@
       <ul>
         
           <li>
-            <a href="/2017/09/05/My-New-Post/">My New Post</a>
+            <a href="/2018/04/22/testreport/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2017/09/05/designreport/">My New Post</a>
+            <a href="/2018/04/22/designreport/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/05/My-New-Post/">My New Post</a>
           </li>
         
           <li>
