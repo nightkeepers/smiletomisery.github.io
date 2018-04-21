@@ -118,7 +118,74 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cj81anqft0001e8u77v9y9cvu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/05/My-New-Post/" data-id="cje27i7hp0000bsu7zfov25nw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-designreport" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/05/designreport/" class="article-date">
+  <time datetime="2017-09-05T06:41:55.000Z" itemprop="datePublished">2017-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/05/designreport/">My New Post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是我用hexo做的第一篇博客，那么本次博客就讲一下我在本次用hexo的历程吧</p>
+<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h3><p>只需上官网下载即可，实际上Git官网下载速度很慢，可以考虑在csdn上下载<br>安装后要设置Github账号和邮箱<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"xuhaiyan"</span></div><div class="line">$ git config --global user.email <span class="string">"haiyan.xu.vip@gmail.com"</span></div></pre></td></tr></table></figure></p>
+<h3 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2.安装node.js"></a>2.安装node.js</h3><p>下载：<a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a></p>
+<h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><h3 id="1-建立Repository"><a href="#1-建立Repository" class="headerlink" title="1.建立Repository"></a>1.建立Repository</h3><p>首先应该注册一个github账号，然后建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】</p>
+<h3 id="2-配置SSH-Key"><a href="#2-配置SSH-Key" class="headerlink" title="2.配置SSH-Key"></a>2.配置SSH-Key</h3><p>首先解释一下SSH，SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。<br>而Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
+<h4 id="2-1-检测SSH-Key是否存在"><a href="#2-1-检测SSH-Key是否存在" class="headerlink" title="2.1 检测SSH-Key是否存在"></a>2.1 检测SSH-Key是否存在</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div><div class="line"><span class="comment"># Lists the files in your .ssh directory, if they exist</span></div></pre></td></tr></table></figure>
+<p>如果有就直接将SSH-key加到Github中去</p>
+<h4 id="2-2-生成新的SSH-key"><a href="#2-2-生成新的SSH-key" class="headerlink" title="2.2 生成新的SSH-key"></a>2.2 生成新的SSH-key</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “你的email.vip@gmail.com”(ssh与keygen之间没有空格)</div></pre></td></tr></table></figure>
+<p>然后输入passphrase（本步骤可以跳过，即连按几次回车）</p>
+<p>分别输入<br>eval “$(ssh-agent -s)”<br>Agent pid 59566<br>ssh-add ~/.ssh/id_rsa</p>
+<p>最后将ssh key添加到GitHub中<br>打开id_rsa.pub文件，将里面的信息复制，登陆GitHub-&gt;Settings-&gt;“SSH Keys”，点“Add SSH Key“，加入ssh-key即可。</p>
+<p>可以验证一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div><div class="line">Hi your user name! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></div></pre></td></tr></table></figure></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p>完成前面步骤后，可执行如下命令安装hexo：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<h3 id="2、初始化"><a href="#2、初始化" class="headerlink" title="2、初始化"></a>2、初始化</h3><p>在你喜欢的目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+<p>这条命令会配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p> 会在目录中安装 node_modules</p>
+<h3 id="3、启动"><a href="#3、启动" class="headerlink" title="3、启动"></a>3、启动</h3><p> 在目录中执行<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<h3 id="4、建立"><a href="#4、建立" class="headerlink" title="4、建立"></a>4、建立</h3><p> 然后在同一个文件夹中新打开一个git bash命令行窗口，<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"new post name"</span></div></pre></td></tr></table></figure></p>
+<p> 然后刷新<a href="http://localhost:4000/，发现已经有了一篇新的文章" target="_blank" rel="external">http://localhost:4000/，发现已经有了一篇新的文章</a><br> 你也可以以去hexo\scaffolds\post.md更改layout</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] <span class="string">"new post name"</span></div></pre></td></tr></table></figure>
+<p> 这条命令将markdown文件生成新的静态网页</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h3 id="5、编辑"><a href="#5、编辑" class="headerlink" title="5、编辑"></a>5、编辑</h3><p> 你可以去hexo\source_posts使用支持markdown的编辑器来编辑博客<br> 部署到Github前需要配置_config.yml文件，首先找到下面的内容并更改branch为master<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: github</div><div class="line">  repository: git@github.com:zhchnchn/zhchnchn.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p> (电脑需要开放SSH端口)<br> 然后输入</p>
+<pre><code class="bash">$ hexo deploy
+</code></pre>
+<p> 如果不行，则改type为git<br> 如果还是不行，输入</p>
+<pre><code class="bash">$ npm install hexo-deployer-git --save
+</code></pre>
+<p> 那么一个博客就部署好了，访问<a href="http://githubname.github.io" target="_blank" rel="external">http://githubname.github.io</a> 即可看到</p>
+<p>（未完待续）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/05/designreport/" data-id="cjg9l13iv0000a0u7x1agaudy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +198,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/05/hello-world/" class="article-date">
-  <time datetime="2017-09-05T03:35:22.937Z" itemprop="datePublished">2017-09-05</time>
+  <time datetime="2017-09-05T03:35:22.938Z" itemprop="datePublished">2017-09-05</time>
 </a>
     
   </div>
@@ -163,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cj81anqfd0000e8u7kiqih1m7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/05/hello-world/" data-id="cje27i7i50001bsu7xc3hd50r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,6 +274,10 @@
           </li>
         
           <li>
+            <a href="/2017/09/05/designreport/">My New Post</a>
+          </li>
+        
+          <li>
             <a href="/2017/09/05/hello-world/">Hello World</a>
           </li>
         
@@ -222,7 +293,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
+      &copy; 2018 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
